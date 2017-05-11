@@ -1,6 +1,8 @@
 # OpenCL Particle-Fluid Simulation
 This project is a particle-fluid simulation, programmed in C an OpenCL for the author's FEEG3003 Individual Project module.
 
+   ![Intro](http://chow.ch/i/7uLBF.png)
+
 ## Requirements
 The development enviroment(s) and OpenCL libraries are required to compile and run the source code:
   - IDE: [Visual Studio]
@@ -39,8 +41,8 @@ Below are the steps to setup OpenCL in Visual Studio. Once this has been done, a
   - Import the `host.c` and `propagate.cl` source files from either the clEnqueueTask or clEnqueueNDRange folders to the Source Files in Solution Explorer pane in Visual Studio.
   - Press the run button. If configured correctly, a console window should pop-up printing information on the compatible OpenCL platforms and devices on a system. 
   
-    [![N|Solid](http://chow.ch/i/PwFL5.png)]
-  - Further documentation on each of the simulation parameters and how to configure simulation variables are given in the folders.
+    ![Log](http://chow.ch/i/PwFL5.png)
+  - Further documentation on each of the simulation parameters and how to configure simulation variables are given in the respective folders.
 
    [Visual Studio]: <https://www.visualstudio.com/downloads/>
    [CUDA Toolkit]: <https://developer.nvidia.com/cuda-downloads>
