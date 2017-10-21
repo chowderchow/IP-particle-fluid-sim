@@ -6,6 +6,7 @@
 #include <CL/cl.h>
 #include <math.h>
 #include <sys\timeb.h>
+#include <conio.h>
 
 // Defining variables
 #define MEM_SIZE (128)

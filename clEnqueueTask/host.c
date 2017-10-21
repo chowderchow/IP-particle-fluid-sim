@@ -5,6 +5,7 @@
 #include <CL/cl.h>
 #include <math.h>
 #include <sys\timeb.h> 
+#include <conio.h>
 
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
