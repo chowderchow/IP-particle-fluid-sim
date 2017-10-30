@@ -397,7 +397,7 @@ int main() {
 		ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &gposnew);
 		ret = clSetKernelArg(kernel, 3, sizeof(cl_mem), &gvelnew);
 		// Execute kernel over NDRange
-		ret = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, NUMPART, 0, NULL, NULL);
+		ret = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &NUMPART, 0, NULL, NULL, NULL);
 		// Wait for this step to finish
 		clFinish(queue);
 
@@ -407,7 +407,7 @@ int main() {
 		ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &gposold);
 		ret = clSetKernelArg(kernel, 3, sizeof(cl_mem), &gvelold);
 		// Execute kernel over NDRange
-		ret = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, NUMPART, 0, NULL, NULL);
+		ret = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &NUMPART, 0, NULL, NULL, NULL);
 		// Wait for this step to finish
 		clFinish(queue);
 	}
