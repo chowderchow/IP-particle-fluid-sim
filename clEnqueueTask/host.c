@@ -241,13 +241,13 @@ int main() {
 		printf("FAILED (%d)\n", ret);
 		// Determine the size of the log
 		size_t log_size;
-		clGetProgramBuildInfo(program, devices, CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
+		clGetProgramBuildInfo(program, devices[0], CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
 
 		// Allocate memory for the log
 		char *log = (char *)malloc(log_size);
 
 		// Get the log
-		clGetProgramBuildInfo(program, devices, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
+		clGetProgramBuildInfo(program, devices[0], CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
 
 		// Print the log
 		printf("%s\n", log);
