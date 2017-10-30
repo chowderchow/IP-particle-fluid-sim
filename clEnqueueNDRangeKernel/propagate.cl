@@ -11,8 +11,7 @@ __kernel void propagate(
 	const float b,
 	const float C,
 	const float c,
-	const float timeStep,
-	const int count
+	const float timeStep
 )
 {
   // get the global id for this work item
@@ -36,11 +35,11 @@ __kernel void propagate(
 	vel.z += (timeStep / tau) * (flow_vel.z - vel.z);
 
 	// displacement loop
-	pos.x += (timeStep * (vel.x + velocity[gid].x) / 2);
-	pos.y += (timeStep * (vel.y + velocity[gid].y) / 2);
-	pos.z += (timeStep * (vel.z + velocity[gid].z) / 2);
+	pos.x += (timeStep * (vel.x + oldVelocity[gid].x) / 2);
+	pos.y += (timeStep * (vel.y + oldVelocity[gid].y) / 2);
+	pos.z += (timeStep * (vel.z + oldVelocity[gid].z) / 2);
 
 	// update values
-	newPosition[idx] = pos;
-	newVelocity[idx] = vel;
+	newPosition[gid] = pos;
+	newVelocity[gid] = vel;
 }
