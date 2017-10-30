@@ -410,6 +410,7 @@ int main() {
 		ret = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &NUMPART, 0, NULL, NULL, NULL);
 		// Wait for this step to finish
 		clFinish(queue);
+		count++;
 	}
 
 	// Log simulation time
